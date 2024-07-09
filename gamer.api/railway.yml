@@ -1,0 +1,8 @@
+version: 1
+services:
+  web:
+    image: 'railway/java:latest'
+    env:
+      DATABASE_URL: 'mysql://user:password@hostname:port/database' # Configure conforme suas credenciais MySQL ou outro banco
+    buildCommand: './mvnw package -DskipTests'
+    runCommand: 'java -jar target/*.jar'
